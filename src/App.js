@@ -5,20 +5,24 @@ import BookList from "./Components/BookList";
 import useBooksContext from "./hooks/use-books-context";
 
 export default function App() {
-   const { fetchBooks } = useBooksContext();
+  const { fetchBooks } = useBooksContext();
 
-    useEffect(() => {
-        fetchBooks();
-    }, [fetchBooks]);
+  useEffect(() => {
+    fetchBooks();
+  }, [fetchBooks]);
 
-
-
-
-    return ( 
-    <div className="app">
-        <h1>Reading List</h1>
-        <BookList />
-        <BookCreate />
+  return (
+    <div
+      className="app"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <h1>Reading List</h1>
+      <BookList />
+      <BookCreate />
     </div>
-    );
+  );
 }
